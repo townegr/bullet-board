@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bullet_board (0.1.0)
+    bullet-board (0.1.0)
       bullet (~> 5.9)
       bundler (~> 1.17)
       rake (~> 12.3)
@@ -46,7 +46,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bullet_board!
+  bullet-board!
 
 BUNDLED WITH
    1.17.3

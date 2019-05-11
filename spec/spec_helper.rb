@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "bullet_board"
+require "bullet-board"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

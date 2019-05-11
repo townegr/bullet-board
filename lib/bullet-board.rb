@@ -1,4 +1,4 @@
-require "bullet_board/version"
+require "bullet-board/version"
 require "bullet"
 
 module BulletBoard

@@ -1,16 +1,16 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "bullet_board/version"
+require "bullet-board/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "bullet_board"
+  spec.name          = "bullet-board"
   spec.version       = BulletBoard::VERSION
   spec.authors       = ["Gregory Towne"]
   spec.email         = ["gtowne@onedoor.com"]
 
   spec.summary       = %q{Aggregate unique N+1 queries backed by useful data points.}
   spec.description   = %q{Build performance status report that outlines the source of N+1 queries.}
-  spec.homepage      = "https://github.com/townegr/bullet_board"
+  spec.homepage      = "https://github.com/townegr/bullet-board"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
