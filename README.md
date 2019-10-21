@@ -22,7 +22,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Append to config/environments/development.rb initializer with the following code:
+
+```ruby
+config.after_initialize do
+  BulletBoard.configure_initialization
+end
+```
 
 ## Development
 
