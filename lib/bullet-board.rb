@@ -1,23 +1,34 @@
 require 'bullet'
-require 'bullet-board/logging'
-require 'bullet-board/notification'
+require 'bullet-board/ext/bullet'
+require 'bullet-board/ext/notification'
 require 'bullet-board/version'
 
 module BulletBoard
-  # # TODO: yield and handle custom overrides by user
-  def self.configure_initialization
-    print_success_notification_to_stderr
-    Bullet.enable = true
-    Bullet.bullet_logger = false
-
+  def self.configure_initialization &block
+    configure_with_defaults
+    block.call if block_given?
+  rescue ConfigurationError => e
+    Rails.logger.error "Error: #{e.message}"
     # change to false because we just want the customized logger
     # currently looping twice through UniformNotifier.active_notifiers in
     # Bullet#for_each_active_notifier_with_notification
-    Bullet.rails_logger = false
-    Bullet.web_logger = true
+  ensure
+    Bullet.bullet_logger = false
+    print_success_notification_to_stderr if Bullet.web_logger_enabled?
+  end
+
+  class ConfigurationError < StandardError
+    def message
+      "initialized with a bad configuration"
+    end
   end
 
   private
+
+  def self.configure_with_defaults
+    Bullet.enable = true
+    Bullet.web_logger = true
+  end
 
   def self.print_success_notification_to_stderr
     STDERR.puts '┌─────────────────────────────────────────────────────────────────────────┐'

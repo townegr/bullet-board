@@ -1,8 +1,8 @@
 # BulletBoard
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bullet-board`. To experiment with that code, run `bin/console` for an interactive prompt.
+NOTE: THIS GEM IS STILL A WORK-IN-PROGRESS AND CURRENTLY NOT READY FOR CONSUMPTION
 
-TODO: Delete this and the text above, and describe your gem
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bullet-board`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 ## Installation
 
@@ -10,11 +10,12 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'bullet-board'
+gem 'slack-notifier'
 ```
 
-And then execute:
+In the terminal, run bundler:
 
-    $ bundle
+    $ bundle install
 
 Or install it yourself as:
 
@@ -22,13 +23,18 @@ Or install it yourself as:
 
 ## Usage
 
-Append to config/environments/development.rb initializer with the following code:
+Append to `config/environments/development.rb` initializer with the following code:
 
 ```ruby
 config.after_initialize do
-  BulletBoard.configure_initialization
+  # accepts a block
+  BulletBoard.configure_initialization do
+    Bullet.enable = false
+  end
 end
 ```
+
+Lastly, ensure that your log directory is not being ignored in `/.gitignore`
 
 ## Development
 
