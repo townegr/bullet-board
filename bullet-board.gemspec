@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["townegr@yahoo.com"]
 
   spec.summary       = %q{Aggregate unique N+1 queries backed by useful data points.}
-  spec.description   = %q{Build performance status report that outlines the source of N+1 queries.}
+  spec.description   = %q{WIP: Build performance status report that outlines the source of N+1 queries.}
   spec.homepage      = "https://github.com/townegr/bullet-board"
   spec.license       = "MIT"
 
