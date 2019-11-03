@@ -6,8 +6,8 @@ module Bullet
       class UnusedEagerLoading
         attr_accessor :counter
 
-        def initialize(callers, base_class, associations, path = nil)
-          super(base_class, associations, path)
+        def initialize callers, base_class, associations, path = nil
+          super base_class, associations, path
 
           @callers = callers
           @counter = 0
@@ -26,8 +26,8 @@ module Bullet
       class NPlusOneQuery
         attr_accessor :counter
 
-        def initialize(callers, base_class, associations, path = nil)
-          super(base_class, associations, path)
+        def initialize callers, base_class, associations, path = nil
+          super base_class, associations, path
 
           @callers = callers
           @counter = 0

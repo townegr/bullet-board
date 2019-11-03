@@ -28,7 +28,7 @@ Append to `config/environments/development.rb` initializer with the following co
 ```ruby
 config.after_initialize do
   # accepts a block
-  BulletBoard.configure_initialization do
+  BulletBoard.enable do
     Bullet.enable = false
   end
 end

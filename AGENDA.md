@@ -10,3 +10,9 @@
   - integrate with DevOps tool to pull down reports of N+1 statistics
 - TODO: I/O ramifications for turning off sync mode [File#sync] and only write when file is closed
   - supposedly faster according to some sources
+- Address conflicts when requiring both Bullet and BulletBoard
+  - only load extensions if `BulletBoard.enable = true`
+- Transform gem into a Rails mountable engine for web interface reporting
+  - example of mountable engine web interface: [https://github.com/tatey/delayed-web]
+  - CC: Ryan Bates [http://railscasts.com/episodes/277-mountable-engines?autoplay=true]
+    - outdated example for creating engine

@@ -4,7 +4,9 @@ require 'bullet-board/ext/notification'
 require 'bullet-board/version'
 
 module BulletBoard
-  def self.configure_initialization &block
+  # def self.enable_with_dependencies; end
+
+  def self.enable &block
     configure_with_defaults
     block.call if block_given?
   rescue ConfigurationError => e
@@ -19,7 +21,7 @@ module BulletBoard
 
   class ConfigurationError < StandardError
     def message
-      "initialized with a bad configuration"
+      "unable to initialize due to configuration conflict"
     end
   end
 
